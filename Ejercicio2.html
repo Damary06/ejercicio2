@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+</head>
+<body>
+    <script>
+        // Paso 3: Crear el arreglo de prueba
+        var inicio = ["unacadena", 3, 9, 1, 10, 500, 1, 10, true];
+
+        // Paso 4: Implementar el algoritmo de ordenación desde 0
+        function ordenarNumeros(arr) {
+            // Filtrar solo los números del arreglo
+            var numeros = arr.filter(item => typeof item === 'number');
+
+            // Algoritmo de ordenación: Bubble Sort
+            for (var i = 0; i < numeros.length; i++) {
+                for (var j = 0; j < numeros.length - 1; j++) {
+                    if (numeros[j] < numeros[j + 1]) {
+                        var temp = numeros[j];
+                        numeros[j] = numeros[j + 1];
+                        numeros[j + 1] = temp;
+                    }
+                }
+            }
+            return numeros;
+        }
+
+        // Paso 5: Imprimir el resultado final en consola
+        console.log("Arreglo ordenado de mayor a menor:");
+        console.log(ordenarNumeros(inicio));
+    </script>
+</body>
+</html>
